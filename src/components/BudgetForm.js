@@ -1,12 +1,12 @@
 import React, { Fragment, useState } from 'react';
 import Error from './Error';
 
-const BudgetForm = () => {
+const BudgetForm = ({ setRemain, setBudget }) => {
 
     const [amount, setAmount] = useState(0);
     const [error, setError] = useState(false);
 
-    const setBudget = (e) => {
+    const setBudgetAmount = (e) => {
         setAmount(parseInt(e.target.value, 10));
     }
 
@@ -18,6 +18,8 @@ const BudgetForm = () => {
             return;
         }
         setError(false);
+        setBudget(amount);
+        setRemain(amount);
     }
 
     return(
@@ -33,7 +35,7 @@ const BudgetForm = () => {
                     type="number"
                     className="u-full-width"
                     placeholder="Your budget"
-                    onChange={setBudget}
+                    onChange={setBudgetAmount}
                 />
                 <input
                     type="submit"
