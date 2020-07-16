@@ -1,11 +1,18 @@
 import React, { useState } from 'react';
 import BudgetForm from './components/BudgetForm';
 import ItemForm from './components/ItemForm';
+import Item from './components/Item';
 
 function App() {
 
   const [budget, setBudget] = useState(0);
   const [remain, setRemain] = useState(0);
+  const [items, setItems] = useState([]);
+
+  const addNewItem = item => {
+    console.log(item);
+    setItems([...items, item]);
+  }
     
 
   return (
@@ -24,10 +31,23 @@ function App() {
             :(
               <div className="row">
                 <div className="one-half column">
-                  <ItemForm />
+                  <ItemForm 
+                    addNewItem={addNewItem}
+                  />
                 </div>
                 <div className="one-half column">
-                  2
+
+                  <div className="gastos-realizados">
+                    <h2>List</h2>
+                    { items.map( item => (
+                      <Item 
+                        item={item}
+                        key={item.id}
+                      />
+                      ))
+                    }
+                  </div>
+
                 </div>
               </div>
             )
