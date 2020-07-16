@@ -1,8 +1,16 @@
 import React from 'react';
+import BudgetForm from './components/BudgetForm';
 
 function App() {
   return (
-    <h1>Budget</h1>
+    <div className="container">
+      <header>
+        <h1>Weekly Expenses</h1>
+        <div className="contenido-principal contenido">
+         <BudgetForm />
+        </div>
+      </header>
+    </div>
   );
 }
 
