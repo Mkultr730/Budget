@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
+import shortid from 'shortid';
+
 import Error from './Error';
 
-import shortid from 'shortid';
 
 const ItemForm = ({setItem, setCreateitem}) => {
 
@@ -68,6 +70,11 @@ const ItemForm = ({setItem, setCreateitem}) => {
             />
         </form>
     );
+}
+
+ItemForm.propTypes = {
+    setItem: PropTypes.func.isRequired,
+    setCreateitem: PropTypes.func.isRequired
 }
 
 export default ItemForm;

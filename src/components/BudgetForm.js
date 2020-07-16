@@ -1,4 +1,6 @@
 import React, { Fragment, useState } from 'react';
+import PropTypes from 'prop-types';
+
 import Error from './Error';
 
 const BudgetForm = ({ setRemain, setBudget }) => {
@@ -45,6 +47,11 @@ const BudgetForm = ({ setRemain, setBudget }) => {
             </form>
         </Fragment>
     );
+}
+
+BudgetForm.propTypes = {
+    setRemain: PropTypes.func.isRequired,
+    setBudget: PropTypes.func.isRequired
 }
 
 export default BudgetForm;

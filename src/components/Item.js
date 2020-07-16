@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const Item = ({item}) => {
 
@@ -11,6 +12,10 @@ const Item = ({item}) => {
             </p>
         </li>
     );
+}
+
+Item.propTypes = {
+    item: PropTypes.object.isRequired
 }
 
 export default Item;
