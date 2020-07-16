@@ -3,7 +3,7 @@ import Error from './Error';
 
 import shortid from 'shortid';
 
-const ItemForm = ({addNewItem}) => {
+const ItemForm = ({setItem, setCreateitem}) => {
 
     const [name, setName] = useState('');
     const [amount, setAmount] = useState(0);
@@ -24,7 +24,8 @@ const ItemForm = ({addNewItem}) => {
             id: shortid.generate()
         }
 
-        addNewItem(item);
+        setItem(item);
+        setCreateitem(true);
 
         setName('');
         setAmount(0);
